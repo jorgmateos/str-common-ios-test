@@ -1,0 +1,23 @@
+name: STRCommonTestApp
+options:
+  bundleIdPrefix: com.stradivarius.test
+  deploymentTarget:
+    iOS: "17.0"
+packages:
+  STRCommonSkp:
+    url: https://github.com/jorgmateos/str-common-skp
+    from: "0.1.0"
+targets:
+  STRCommonTestApp:
+    type: application
+    platform: iOS
+    sources: [STRCommonTestApp]
+    dependencies:
+      - package: STRCommonSkp
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.stradivarius.test.strcommon
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        SWIFT_VERSION: "6.0"
+        CODE_SIGNING_ALLOWED: NO
